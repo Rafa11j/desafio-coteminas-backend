@@ -57,7 +57,7 @@ class ListAllProductsPaginatedService {
       discount: product.discount,
       priceDiscount: product.price - (product.price * product.discount) / 100,
       images: product.images.map(
-        image => `http://localhost:3333/files/${image.path}`,
+        image => `${process.env.API_URL}/files/${image.path}`,
       ),
     }));
 
